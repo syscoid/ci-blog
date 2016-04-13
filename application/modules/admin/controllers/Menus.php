@@ -1,9 +1,5 @@
 <?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Menus extends MY_Controller {
 
@@ -30,7 +26,7 @@ class Menus extends MY_Controller {
 
         if ($this->form_validation->run() == TRUE) {
             $parent_id = 0;
-            if(!empty($this->input->post('parent_id'))){
+            if(!empty($parent_id)){
                 $parent_id = $this->input->post('parent_id');
             }
 
@@ -64,7 +60,7 @@ class Menus extends MY_Controller {
 
         if ($this->form_validation->run() == TRUE) {
             $parent_id = 0;
-            if(!empty($this->input->post('parent_id'))){
+            if(!empty($parent_id)){
                 $parent_id = $this->input->post('parent_id');
             }
 

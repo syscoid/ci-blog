@@ -4,7 +4,9 @@
                   <h3>Recent Posts</h3>
                 </div>
                 <div class="list-group">
-                  <?php if(!empty($this->general->getRecentPosts())):?>
+                  <?php 
+                  $getRecentPosts = $this->general->getRecentPosts();
+                  if(!empty($getRecentPosts)):?>
                     <?php foreach ($this->general->getRecentPosts() as $post):?>
                       <div class="list-group-item">
                         <?php if(!empty($post['featured_image'])):?>
@@ -27,7 +29,9 @@
                 </div>
                 <div class="widget-content list-menus">
                   <ul>
-                    <?php if(!empty($this->general->getCategories())):?>
+                    <?php 
+                    $getCategories = $this->general->getCategories();
+                    if(!empty($getCategories)):?>
                         <?php foreach($this->general->getCategories() as $category):?>
                           <li><a href="<?php echo site_url('category/'.$category['slug'])?>"><?php echo $category['name']?></a></li>
                         <?php endforeach;?>
@@ -53,7 +57,9 @@
                   <h3>Tags</h3>
                 </div>
                 <div class="widget-content list-menus">
-                  <?php if(!empty($this->general->getTags())):?>
+                  <?php 
+                  $getTags = $this->general->getTags();
+                  if(!empty($getTags)):?>
                     <?php foreach($this->general->getTags() as $tag):?>
                         <a class="tags" href="<?php echo site_url('tag/'.$tag['slug'])?>"><?php echo ucwords($tag['name'])?></a>
                     <?php endforeach;?>
